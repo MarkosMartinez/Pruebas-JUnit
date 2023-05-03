@@ -5,9 +5,12 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-class CalculadoraParametrosTest {
+@RunWith(Parameterized.class)
+public class CalculadoraParametrosTest {
 
 	@Parameters
 	public static ArrayList<Object> getData(){
