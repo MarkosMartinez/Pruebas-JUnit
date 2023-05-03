@@ -7,6 +7,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 
 class CalculadoraTest {
 	private Calculadora calculadora;
@@ -18,6 +20,7 @@ class CalculadoraTest {
 	}
 
 	@Test
+	@EnabledOnOs(OS.LINUX)
 	@DisplayName("Comprobacion de la suma")
 	void testSuma() {
 		assertEquals(9, calculadora.suma());

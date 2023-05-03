@@ -33,11 +33,8 @@ public class Calculadora {
 	}*/
 	
 	public static void main(String[] args) {
-	Calculadora calculadora1 = new Calculadora(2, 3);
-	int resultado = calculadora1.suma();
-	if(resultado != 5) {
-		System.out.println("Metodo suma no funciona");
-	}
+	Calculadora c = new Calculadora(20, 0);
+	c.divide();
 }
 
 }
