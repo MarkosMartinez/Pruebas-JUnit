@@ -2,8 +2,6 @@ package prueba;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Before;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,11 +14,11 @@ class CalculadoraTest {
 	@BeforeEach /*@BeforeAll y @Before con static y public*/
 	void SetUp() {
 	calculadora = new Calculadora(6,3);
-	System.out.println("Before each");
+	System.out.println("Despues de cada uno");
 	}
 
 	@Test
-	@EnabledOnOs(OS.LINUX)
+	//@EnabledOnOs(OS.LINUX) /*Para que solo funcione en linux*/
 	@DisplayName("Comprobacion de la suma")
 	void testSuma() {
 		assertEquals(9, calculadora.suma());
