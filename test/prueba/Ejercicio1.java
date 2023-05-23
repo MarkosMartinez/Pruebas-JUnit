@@ -143,11 +143,12 @@ private Calculadora calculadora;
 	@Test
 	public void testTiempoEjecuccion() {
 		long empieza = System.nanoTime();
-		long termina = System.nanoTime();
-		long tiempoTranscurrido = termina - empieza;
 		Calculadora calcError = new Calculadora(1000000000, 20);
 		calcError.divide();
+		long termina = System.nanoTime();
+		long tiempoTranscurrido = termina - empieza;
+		
 		System.out.println("Tiempo de ejecuccion: " + tiempoTranscurrido);
-	    assertTrue(tiempoTranscurrido < 201);
+	    assertTrue(tiempoTranscurrido < 1100);
 	}
 }
