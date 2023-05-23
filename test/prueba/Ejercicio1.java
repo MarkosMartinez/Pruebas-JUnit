@@ -22,7 +22,7 @@ private Calculadora calculadora;
 	@BeforeEach
 	void SetUp() {
 	calculadora = new Calculadora(6,3);
-	System.out.println("Despues de cada uno");
+	/*System.out.println("Despues de cada uno");*/
 	}
 
 	@Test
@@ -147,8 +147,8 @@ private Calculadora calculadora;
 	//FASE 5
 	@Test
 	public void testTiempoEjecuccion() {
-		assertTimeout(Duration.ofSeconds(4), () -> {
-            Thread.sleep(3000); //Si el tiempo de ejecuccion es menor a 4 segundos, funcionara correctamente
+		assertTimeout(Duration.ofMillis(4000), () -> {
+            Thread.sleep(3000); //Si el tiempo de ejecuccion es menor a 4000 milisegundos, funcionara correctamente
         });
 	}
 }
