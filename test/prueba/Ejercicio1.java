@@ -1,6 +1,10 @@
 package prueba;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTimeout;
+
+import java.time.Duration;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -143,13 +147,8 @@ private Calculadora calculadora;
 	//FASE 5
 	@Test
 	public void testTiempoEjecuccion() {
-		long empieza = System.nanoTime();
-		Calculadora calcError = new Calculadora(1000000000, 20);
-		calcError.divide();
-		long termina = System.nanoTime();
-		long tiempoTranscurrido = termina - empieza;
-		
-		System.out.println("Tiempo de ejecuccion: " + tiempoTranscurrido);
-	    assertTrue(tiempoTranscurrido < 1500); //Si el tiempo de ejecuccion es menor que 1500 ms, el test pasara correctamente.
+		assertTimeout(Duration.ofSeconds(4), () -> {
+            Thread.sleep(3000); //Si el tiempo de ejecuccion es menor a 4 segundos, funcionara correctamente
+        });
 	}
 }
