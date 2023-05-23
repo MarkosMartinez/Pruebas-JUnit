@@ -17,6 +17,9 @@ public class Calculadora {
 	}
 	
 	public int divide (){
+		if (b == 0) {
+            throw new IllegalArgumentException("Cannot divide by zero!");
+        }
 			return a/b;
 		}
 	

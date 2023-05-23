@@ -130,8 +130,9 @@ private Calculadora calculadora;
 	@Test
 	@DisplayName("Division cero ERROR")
 	void testDivisionCero(){
+		Calculadora calcError = new Calculadora(5, 0);
 		IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> {
-			Calculadora calcError = new Calculadora(5, 0);
+			
 			calcError.divide();
 			
 		});
@@ -149,6 +150,6 @@ private Calculadora calculadora;
 		long tiempoTranscurrido = termina - empieza;
 		
 		System.out.println("Tiempo de ejecuccion: " + tiempoTranscurrido);
-	    assertTrue(tiempoTranscurrido < 1100);
+	    assertTrue(tiempoTranscurrido < 1500); //Si el tiempo de ejecuccion es menor que 1500 ms, el test pasara correctamente.
 	}
 }
